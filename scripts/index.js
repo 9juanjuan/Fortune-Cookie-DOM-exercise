@@ -8,17 +8,28 @@ const fortunes =
 
 const buttonPress = document.querySelector('[data-input]');
 const fortune = document.querySelector('[data-output]');
+// let num = 0;
+// function fortInc(fortuna){
+//     for(i= 0, i < fortuna.length, i++){
+//         fortuna[i]+= 1
+//         console.log(fortuna[i])
+//     }
+// }
+let num=0; 
 
-function fortInc(fortuna){
-    for(i= 0, i < fortuna.length, i++){
-        fortuna[i]+= 1
-        console.log(fortuna[i])
-    }
-}
 function respondToClick() {
     console.log('Yuh')
+    console.log(num);
+    fortune.textContent = fortunes[num];
+    num +=1 
+    if (num == fortunes.length+1) {
+        num =0;
+    }
     
-    fortune.textContent = fortunes[0] ;
+    // fortunes.forEach(function(i){
+    //     return fortunes[i+1]
+    // });
+
     fortune.classList.add('shown')
     console.log(fortune)
 }

@@ -21,32 +21,48 @@ html, body {
     flex-wrap: wrap;
     justify-content: center;
 }
+h1{
+    color:white;
+    height: 10%;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 45px;
+    margin-top: -80px;
 
+
+}
 .box{
     width: 30%;
-    height: 30%;
+    height:70%;
     display:flex;
     margin-left: 13rem;
-    margin-bottom: 14rem;
+    /* margin-bottom: 14rem; */
     flex-wrap: wrap;
 }
 .cookie {
     font-family: 'Gloria Hallelujah', cursive;
-    font-size: 30px;
+    font-size: 25px;
     color: white;
     width: 100%;
+    height: 30%;
     display: none;
     /* justify-content: center; */
 }
 .cookie.shown{
     display: flex;
 }
-
-.btn {
-    height: 2rem;
-    width: 30%;
+.btn-div {
+    height: 3rem;
+    width:35%;
     display:flex;
-    margin-left: 35%;
+    margin-left:25%;
+    align-content: flex-end;
+    justify-content: flex-end;
+    margin-top: -15%;
+}
+.btn {
+    height: 100%;
+    width: 50%;
+    
     
     /* justify-content: center; */
 
