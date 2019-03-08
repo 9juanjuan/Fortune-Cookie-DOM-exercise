@@ -6,8 +6,10 @@ const fortunes =
 "If you refuse to accept anything but the best you very often get it."
 ];
 
-const buttonPress = document.querySelector('[data-input]');
+const buttonPress = document.querySelectorAll('[data-input]');
+// const previousButtonPress = document.querySelectorAll()
 const fortune = document.querySelector('[data-output]');
+
 // let num = 0;
 // function fortInc(fortuna){
 //     for(i= 0, i < fortuna.length, i++){
@@ -33,5 +35,24 @@ function respondToClick() {
     fortune.classList.add('shown')
     console.log(fortune)
 }
+function respondToClickPrevious() {
+    console.log('Yuh')
+    console.log(num);
+    fortune.textContent = fortunes[num];
+    num -=1 
+    // if (num == fortunes.length+1) {
+    //     num =0;
+    // }
+    
+    // fortunes.forEach(function(i){
+    //     return fortunes[i+1]
+    // });
 
-buttonPress.addEventListener('click', respondToClick)
+    fortune.classList.add('shown')
+    console.log(fortune)
+}
+function attachClickHandler(oneElement) {
+    oneElement.addEventListener('click', respondToClick)
+}
+// buttonPress.addEventListener('click', respondToClick)
+buttonPress.forEach(attachClickHandler)
