@@ -52,7 +52,7 @@ h1{
 }
 .btn-div {
     height: 3rem;
-    width:35%;
+    width:50%;
     display:flex;
     margin-left:25%;
     align-content: flex-end;
@@ -61,7 +61,10 @@ h1{
 }
 .btn {
     height: 100%;
-    width: 50%;
+    width: 33%;
+    font-family: 'Srisakdi', cursive;
+    font-size: 18px;
+    color:red
     
     
     /* justify-content: center; */

@@ -7,7 +7,8 @@ const fortunes =
 ];
 
 const buttonPress = document.querySelectorAll('[data-input]');
-// const previousButtonPress = document.querySelectorAll()
+const previousButtonPress = document.querySelectorAll('[data-input2]');
+const randomButtonPress = document.querySelector('[data-input3]');
 const fortune = document.querySelector('[data-output]');
 
 // let num = 0;
@@ -17,16 +18,18 @@ const fortune = document.querySelector('[data-output]');
 //         console.log(fortuna[i])
 //     }
 // }
-let num=0; 
+let num = -1; 
 
 function respondToClick() {
     console.log('Yuh')
     console.log(num);
-    fortune.textContent = fortunes[num];
     num +=1 
-    if (num == fortunes.length+1) {
+    if (num == fortunes.length) {
         num =0;
     }
+    fortune.textContent = fortunes[num];
+    
+    console.log(num)
     
     // fortunes.forEach(function(i){
     //     return fortunes[i+1]
@@ -36,10 +39,16 @@ function respondToClick() {
     console.log(fortune)
 }
 function respondToClickPrevious() {
-    console.log('Yuh')
+    console.log('Nuhuh')
     console.log(num);
-    fortune.textContent = fortunes[num];
+    if (num == 0 || num == -1) {
+        num = fortunes.length;
+    }
     num -=1 
+    fortune.textContent = fortunes[num];
+    console.log(num);
+   
+    
     // if (num == fortunes.length+1) {
     //     num =0;
     // }
@@ -51,8 +60,17 @@ function respondToClickPrevious() {
     fortune.classList.add('shown')
     console.log(fortune)
 }
+function respondToRandom(){
+    num = Math.floor(Math.random()*5);
+    fortune.textContent = fortunes[num];
+}
 function attachClickHandler(oneElement) {
     oneElement.addEventListener('click', respondToClick)
 }
+function attachClickHandlerPrevious(oneElement) {
+    oneElement.addEventListener('click', respondToClickPrevious)
+}
 // buttonPress.addEventListener('click', respondToClick)
 buttonPress.forEach(attachClickHandler)
+previousButtonPress.forEach(attachClickHandlerPrevious)
+randomButtonPress.addEventListener('click', respondToRandom)
